@@ -1,0 +1,108 @@
+.product-card {
+  width: 250px;
+  background-color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  width: 100%;
+  min-height: 200px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease-out;
+  margin-bottom: 20px;
+  border-radius: 20px;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-out;
+}
+
+.product-name {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.product-price {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: 10px 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.add-to-cart {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--success-color);
+  color: white;
+  font-size: 13px;
+  padding: 10px 15px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  border-radius: 10px;
+}
+
+.add-to-cart:hover {
+  background-color: var(--primary-color);
+}
+
+.add-to-cart i {
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.add-to-fav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  padding: 10px;
+  width: 10px;
+  height: 10px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  border: 2px solid black;
+  border-radius: 10px;
+  position: relative; /* Added */
+}
+
+.add-to-fav i {
+  position: absolute; /* Added */
+  transition: opacity 0.3s ease; /* Added */
+}
+
+.add-to-fav .material-icons-outlined {
+  color: black;
+  opacity: 1; /* Added */
+}
+
+.add-to-fav .material-icons {
+  color: var(--danger-color);
+  opacity: 0; /* Added */
+}
+
+.add-to-fav:hover .material-icons-outlined {
+  opacity: 0; /* Added */
+}
+
+.add-to-fav:hover .material-icons {
+  opacity: 1; /* Added */
+}

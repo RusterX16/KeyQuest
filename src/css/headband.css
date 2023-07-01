@@ -1,0 +1,122 @@
+header {
+  display: flex;
+  flex-direction: column;
+}
+
+header .headband {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  background: var(--primary-color);
+  box-shadow: var(--secondary-color) 0 0 10px;
+}
+
+header .headband .left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header .headband .left .img-container {
+  margin: 10px;
+}
+
+header .headband .left .title {
+  margin-block-start: auto;
+  margin-block-end: auto;
+  text-shadow:
+    -1px -1px 1px var(--light-color),
+    1px -1px 1px var(--light-color),
+    -1px 1px 1px var(--light-color),
+    1px 1px 1px var(--light-color);
+}
+
+header .headband .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+header .headband .right .login-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  margin-right: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+header .headband .right .login-button .material-icons-outlined,
+header .headband .right .login-button .material-icons {
+  font-size: 16px;
+}
+
+header .headband .right .login-button i {
+  margin-right: 8px;
+}
+
+header .headband .right .login-button:hover {
+  background-color: var(--light-color);
+  color: var(--secondary-color);
+}
+
+header .headband .right .logout-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--danger-color);
+  color: var(--light-color);
+  margin-right: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+header .headband .right .logout-button .material-icons-outlined,
+header .headband .right .logout-button .material-icons {
+  font-size: 16px;
+}
+
+header .headband .right .logout-button i {
+  margin-right: 8px;
+}
+
+header .headband .right .logout-button:hover {
+  background-color: var(--light-color);
+  color: var(--secondary-color);
+}
+
+header .headband .right .welcome-message {
+  text-align: center;
+  margin-right: 20px
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  header .headband .left .title {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  header .headband .left .title {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  header .headband .right .welcome-message {
+    display: none;
+  }
+}
