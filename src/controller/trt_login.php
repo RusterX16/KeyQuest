@@ -58,6 +58,15 @@ if (!$basket) {
   echo 'created';
 }
 
+// Fetch items in the wishlist
+$sql = "SELECT product_id FROM products p JOIN favorites f ON p.id = f.product_id WHERE user_id = :user_id";
+$query = $pdo->prepare($sql);
+$query->execute([
+  'user_id' => $_SESSION['user']['id']
+]);
+$fav = $query->fetchAll(PDO::FETCH_COLUMN, 0);
+
+
 // Fetch items in the basket
 $sql = "SELECT * FROM items WHERE basket_id = :basket_id";
 $query = $pdo -> prepare($sql);
@@ -66,9 +75,10 @@ $query -> execute([
 ]);
 $items = $query -> fetchAll(PDO::FETCH_ASSOC);
 
-// Save user basket to session
-$_SESSION['basket'] = $basket;
-$_SESSION['basket']['items'] = $items;  // save the items to basket
+// Save user favorites to session
+$_SESSION['fav'] = array_fill_keys($fav, true);
+// Save user basket items to session
+$_SESSION['basket']['items'] = $items;
 
 header('Location: /key_quest/index.php?action=home');
 exit();

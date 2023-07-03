@@ -14,7 +14,8 @@ ini_set('display_errors', 1);
   <link rel="stylesheet" href="src/css/home.css" type="text/css"/>
   <link rel="stylesheet" href="src/css/product.css" type="text/css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
   <script src="/src/js/script.js" type="text/javascript"></script>
   <title>KeyQuest</title>
 </head>
@@ -29,16 +30,39 @@ ini_set('display_errors', 1);
   ]);
   $pdo = Model::getPDO();
 
-  $sql = 'SELECT * FROM products' . (isset($_GET['type']) ? ' WHERE type = :type' : '');
-  $query = $pdo -> prepare($sql);
+  if (isset($_GET['rel'])) {
+    $rel = $_GET['rel'];
 
-  if (isset($_GET['type'])) {
-    $query -> bindValue(':type', $_GET['type']);
+    if ($rel == 'keyboards') {
+      $_GET['size'] = $_GET['type']; // Copy the value from 'type' to 'size'
+      unset($_GET['type']);
+    }
+
+    // Assuming 'rel' refers to a table in your database:
+    if (isset($_GET['type'])) {
+      $sql = 'SELECT * FROM ' . $rel . ' JOIN products ON ' . $rel . '.product_id = products.id WHERE ' . $rel . '.type = :type';
+    } else {
+      $sql = 'SELECT * FROM ' . $rel . ' JOIN products ON ' . $rel . '.product_id = products.id';
+    }
+  } else {
+    $sql = 'SELECT * FROM products';
+    if (isset($_GET['type'])) {
+      $sql .= ' WHERE type = :type';
+    }
   }
-  $query -> execute();
-  $result = $query -> fetchAll();
 
-  foreach ($result as $key => $value) {
+  $query = $pdo->prepare($sql);
+  if (isset($_GET['type'])) {
+    $query->bindValue(':type', $_GET['type']);
+  }
+  $query->execute();
+  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+
+  foreach ($result as $value) {
+    $productId = $value['id'];
+    $isFavorite = isset($_SESSION['fav'][$value['id']]);
+    $favoriteClass = $isFavorite ? 'favorite-active' : '';
+
     echo "
       <div class='product-card'>
         <div class='product-image'>
@@ -50,7 +74,7 @@ ini_set('display_errors', 1);
           <a href='/key_quest/index.php?action=trtAddToBasket&id={$value['id']}&price={$value['price']}' class='add-to-cart'>
             <i class='material-icons-outlined'>shopping_cart</i>Add to Cart
           </a>
-          <a href='#' class='add-to-fav'>
+          <a href='/key_quest/index.php?action=trtToggleWishlist&id={$value['id']}' class='add-to-fav {$favoriteClass}'>
             <i class='material-icons-outlined'>favorite_border</i>
             <i class='material-icons'>favorite</i>
           </a>
@@ -58,6 +82,9 @@ ini_set('display_errors', 1);
       </div>
     ";
   }
+  echo '<pre>';
+  var_dump($_SESSION);
+  echo '</pre>';
   ?>
 </main>
 </body>

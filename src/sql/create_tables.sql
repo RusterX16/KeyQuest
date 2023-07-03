@@ -1,6 +1,7 @@
 DROP TABLE IF EXISTS `users`;
 DROP TABLE IF EXISTS `products`;
 DROP TABLE IF EXISTS `baskets`;
+DROP TABLE IF EXISTS `favorites`;
 DROP TABLE IF EXISTS `items`;
 DROP TABLE IF EXISTS `sets`;
 DROP TABLE IF EXISTS `keyboards`;
@@ -8,7 +9,6 @@ DROP TABLE IF EXISTS `keycaps`;
 DROP TABLE IF EXISTS `switches`;
 DROP TABLE IF EXISTS `cases`;
 DROP TABLE IF EXISTS `pcbs`;
-DROP TABLE IF EXISTS `cables`;
 DROP TABLE IF EXISTS `tools`;
 DROP TABLE IF EXISTS `accessories`;
 
@@ -37,6 +37,14 @@ CREATE TABLE `baskets` (
   FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 );
 
+CREATE TABLE `favorites` (
+  user_id INT,
+  product_id INT,
+  PRIMARY KEY (`user_id`, `product_id`),
+  FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
+);
+
 CREATE TABLE `items` (
   product_id INT,
   basket_id INT,
@@ -47,64 +55,64 @@ CREATE TABLE `items` (
 );
 
 CREATE TABLE `sets` (
-  id INT AUTO_INCREMENT,
+  product_id INT,
   type ENUM('builtin', 'custom'),
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id`) REFERENCES `products` (`id`)
+  PRIMARY KEY (`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `keyboards` (
-  id INT AUTO_INCREMENT,
+  product_id INT,
   size ENUM('full', 'tkl', '75', '65', '60', '40', 'other'),
   layout ENUM('ansi', 'iso', 'other'),
   rgb BOOLEAN,
   wireless BOOLEAN,
   hot_swappable BOOLEAN,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id`) REFERENCES `products` (`id`)
+  PRIMARY KEY (`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `keycaps` (
-  id INT AUTO_INCREMENT,
-  type ENUM('groupby', 'classic'),
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id`) REFERENCES `products` (`id`)
+  product_id INT,
+  type ENUM('groupby', 'classic', 'artisanal'),
+  PRIMARY KEY (`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `switches` (
-  id INT AUTO_INCREMENT,
+  product_id INT,
   type ENUM('linear', 'tactile', 'clicky', 'optical', 'other'),
   actuation INT,
   bottom_out INT,
   `force` INT,
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id`) REFERENCES `products` (`id`)
+  PRIMARY KEY (`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `cases` (
-  id INT AUTO_INCREMENT,
+  product_id INT,
   type ENUM('aluminum', 'plastic', 'wood', 'other'),
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id`) REFERENCES `products` (`id`)
+  PRIMARY KEY (`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `pcbs` (
-  id INT AUTO_INCREMENT,
+  product_id INT,
   type ENUM('north', 'south', 'other'),
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id`) REFERENCES `products` (`id`)
+  PRIMARY KEY (`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `tools` (
-  id INT AUTO_INCREMENT,
+  product_id INT,
   type ENUM('lube', 'switch opener', 'switch puller', 'keycap puller', 'lube station', 'other'),
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id`) REFERENCES `products` (`id`)
+  PRIMARY KEY (`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `accessories` (
-  id INT AUTO_INCREMENT,
+  product_id INT,
   type ENUM('mouse pad', 'wrist rest', 'stabilizers', 'foam', 'cables', 'house', 'knobs', 'buffers', 'o rings', 'stickers', 'other'),
-  PRIMARY KEY (`id`),
-  FOREIGN KEY (`id`) REFERENCES `products` (`id`)
+  PRIMARY KEY (`product_id`),
+  FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );

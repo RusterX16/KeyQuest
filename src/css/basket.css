@@ -31,7 +31,7 @@
 
 .product-quantity {
   display: flex;
-  display: row;
+  flex-direction: row;
   align-items: center;
   gap: 10px;
 }
@@ -106,7 +106,12 @@
 
 .total-price {
   font-size: 18px;
-  margin: 50px 0 0 15px;
+  margin: 30px 15px 10px 15px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
 }
 
 .pay-button {
@@ -115,7 +120,7 @@
   background: var(--primary-color);
   color: white;
   padding: 10px;
-  margin: 10px;
+  margin-left: 10px;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -127,5 +132,52 @@
 }
 
 .pay-button i {
-  margin-right: 0.5em;
+  margin-right: 10px;
+}
+
+.clear-basket-button {
+  display: inline-flex;
+  align-items: center;
+  background: var(--danger-color);
+  color: white;
+  padding: 10px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.clear-basket-button i {
+  margin-right: 10px;
+}
+
+.clear-basket-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.clear-basket-button:disabled {
+  opacity: 0.5;
+}
+
+.clear-basket-button:disabled:hover {
+  background-color: var(--danger-color);
+  cursor: default;
+}
+
+.delete-item button {
+  transition: background 0.3s ease;
+}
+
+.delete-item button:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+.delete-item button:focus {
+  outline: none;
+}
+
+.delete-item button:focus-visible {
+  box-shadow: 0 0 0 2px var(--primary-color);
 }

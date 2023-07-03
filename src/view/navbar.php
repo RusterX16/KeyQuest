@@ -34,12 +34,12 @@
           <i class="material-icons-outlined">keyboard</i>
           <span>Keyboards</span>
           <ul class="submenu-items">
-            <li><a href="#">Full (100%)</a></li>
-            <li><a href="#">TKL (80%)</a></li>
-            <li><a href="#">75%</a></li>
-            <li><a href="#">65%</a></li>
-            <li><a href="#">60%</a></li>
-            <li><a href="#">Others</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=keyboards&type=full">Full (100%)</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=keyboards&type=tkl">TKL (80%)</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=keyboards&type=75">75%</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=keyboards&type=65">65%</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=keyboards&type=60">60%</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=keyboards&type=other">Others</a></li>
           </ul>
         </a>
       </li>
@@ -59,11 +59,11 @@
           <i class="material-icons-outlined">settings_remote</i>
             <span>Switches</span>
           <ul class="submenu-items">
-            <li><a href="#">Linear switches</a></li>
-            <li><a href="#">Tactiles switches</a></li>
-            <li><a href="#">Clicky switches</a></li>
-            <li><a href="#">Optical switches</a></li>
-            <li><a href="#">Other switches</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=switches&type=linear">Linear switches</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=switches&type=tactile">Tactiles switches</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=switches&type=clicky">Clicky switches</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=switches&type=optical">Optical switches</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=switches&type=other">Other switches</a></li>
           </ul>
         </a>
       </li>

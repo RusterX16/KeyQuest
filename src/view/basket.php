@@ -13,6 +13,7 @@ session_start();
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
   <link rel="icon" href="../resources/images/logo.png" type="image/x-icon">
   <script src="/key_quest/src/js/script.js" type="text/javascript"></script>
+  <script src="/key_quest/src/js/basket.js" type="text/javascript"></script>
   <title>Basket</title>
 </head>
 <body>
@@ -64,7 +65,7 @@ session_start();
         </div>
         <div class='product-info'>
           <h3 class='product-name'><?php echo $name; ?></h3>
-          <p class='product-price'><?php echo $price; ?> €</p>
+          <p class='product-price'><?php echo $price; ?> $</p>
           <div class='product-quantity'>
             <div class='quantity-control'>
               <form
@@ -77,7 +78,7 @@ session_start();
                 </button>
               </form>
               <input type='number' value='<?php echo $quantity; ?>' min='1' max='999' class='quantity-input'
-                name='quantity' data-id='<?php echo $id; ?>' data-price='<?php echo $price; ?>'>
+                     name='quantity' data-id='<?php echo $id; ?>' data-price='<?php echo $price; ?>'>
               <form
                   action="<?php echo
                     '/key_quest/index.php?action=trtUpdateBasket&id=' . $id . '&price=' . $price . '&quantity=' . $quantity . '&operation=plus'; ?>"
@@ -98,16 +99,20 @@ session_start();
               </button>
             </form>
           </div>
-          <p class='product-total-price'>Total price: <?php echo $itemTotal; ?> €</p>
+          <p class='product-total-price'>Total price: <?php echo $itemTotal; ?> $</p>
         </div>
       </div>
-      <?php
-    }
-
-    echo "<p class='total-price'>Total: $totalPrice €</p>";
-    echo "<button class='pay-button'><i class='material-icons'>credit_card</i> Pay Now</button>";
-  }
-  ?>
+    <?php } ?>
+    <p class='total-price'>Total: <?php echo $totalPrice ?> $</p>
+  <?php } ?>
+  <div class="buttons">
+    <button class='pay-button'><i class='material-icons-outlined'>credit_card</i> Pay Now</button>
+    <button class="clear-basket-button"
+            onclick="showEmptyBasketConfirmModal()" <?php echo empty($_SESSION['basket']['items']) ? 'disabled' : ''; ?>>
+      <i class="material-icons-outlined">remove_shopping_cart</i>
+      Clear Basket
+    </button>
+  </div>
 </main>
 </body>
 </html>

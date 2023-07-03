@@ -88,28 +88,50 @@
   transition: background-color 0.3s ease;
   border: 2px solid black;
   border-radius: 10px;
-  position: relative; /* Added */
+  position: relative;
 }
 
 .add-to-fav i {
-  position: absolute; /* Added */
-  transition: opacity 0.3s ease; /* Added */
+  position: absolute;
+  transition: opacity 0.3s ease;
 }
 
 .add-to-fav .material-icons-outlined {
   color: black;
-  opacity: 1; /* Added */
+  opacity: 1;
 }
 
 .add-to-fav .material-icons {
   color: var(--danger-color);
-  opacity: 0; /* Added */
+  opacity: 0;
 }
 
 .add-to-fav:hover .material-icons-outlined {
-  opacity: 0; /* Added */
+  color: black;
+  opacity: 1;
 }
 
 .add-to-fav:hover .material-icons {
-  opacity: 1; /* Added */
+  color: var(--danger-color);
+  opacity: 1;
+}
+
+.favorite-active .material-icons-outlined {
+  color: black;
+  opacity: 0;
+}
+
+.favorite-active .material-icons {
+  color: var(--danger-color);
+  opacity: 1;
+}
+
+.favorite-active:hover .material-icons-outlined {
+  color: black;
+  opacity: 1;
+}
+
+.favorite-active:hover .material-icons {
+  color: var(--danger-color);
+  opacity: 0;
 }

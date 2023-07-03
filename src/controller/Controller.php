@@ -16,6 +16,13 @@ class Controller {
     ]);
   }
 
+  public static function wishlist(): void {
+    require_once File ::buildPath([
+      'view',
+      'wishlist.php'
+    ]);
+  }
+
   public static function login(): void {
     require_once File ::buildPath([
       'view',
@@ -62,6 +69,20 @@ class Controller {
     require_once File ::buildPath([
       'controller',
       'trt_remove_from_basket.php'
+    ]);
+  }
+
+  public static function trtEmptyBasket(): void {
+    require_once File ::buildPath([
+      'controller',
+      'trt_empty_basket.php'
+    ]);
+  }
+
+  public static function trtToggleWishlist(): void {
+    require_once File ::buildPath([
+      'controller',
+      'trt_toggle_wishlist.php'
     ]);
   }
 }

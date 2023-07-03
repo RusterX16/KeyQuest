@@ -56,15 +56,6 @@ header .headband .right .login-button {
   transition: background-color 0.3s ease;
 }
 
-header .headband .right .login-button .material-icons-outlined,
-header .headband .right .login-button .material-icons {
-  font-size: 16px;
-}
-
-header .headband .right .login-button i {
-  margin-right: 8px;
-}
-
 header .headband .right .login-button:hover {
   background-color: var(--light-color);
   color: var(--secondary-color);
@@ -83,15 +74,6 @@ header .headband .right .logout-button {
   font-size: 13px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-}
-
-header .headband .right .logout-button .material-icons-outlined,
-header .headband .right .logout-button .material-icons {
-  font-size: 16px;
-}
-
-header .headband .right .logout-button i {
-  margin-right: 8px;
 }
 
 header .headband .right .logout-button:hover {
@@ -120,20 +102,46 @@ header .headband .right .basket-button {
   transition: background-color 0.3s ease;
 }
 
-header .headband .right .basket-button .material-icons-outlined,
-header .headband .right .basket-button .material-icons {
-  font-size: 16px;
-}
-
-header .headband .right .basket-button i {
-  margin-right: 8px;
-}
-
 header .headband .right .basket-button:hover {
   background-color: var(--light-color);
   color: var(--secondary-color);
 }
 
+header .headband .right .wishlist-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  background-color: var(--tertiary-color);
+  color: var(--light-color);
+  margin-right: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+header .headband .right .wishlist-button .material-icons {
+  font-size: 16px;
+  margin-right: 8px;
+  transition: opacity 0.3s ease;
+  color: white;
+}
+
+header .headband .right .wishlist-button:hover {
+  background-color: var(--light-color);
+  color: var(--secondary-color);
+}
+
+header i.material-icons,
+header i.material-icons-outlined {
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.wishlist-quantity-badge,
 .basket-quantity-badge {
   position: absolute;
   display: flex;

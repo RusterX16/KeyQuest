@@ -47,14 +47,25 @@
         </a>
       ";
       } else {
-        $totalItems = 0;
+        $basketCount = 0;
+        $favCount = 0;
 
         if (isset($_SESSION['basket']['items'])) {
           foreach ($_SESSION['basket']['items'] as $item) {
             if (is_array($item) && isset($item['quantity'])) {
-              $totalItems += intval($item['quantity']); // Convert the quantity to an integer before adding
+              $basketCount += intval($item['quantity']); // Convert the quantity to an integer before adding
             }
           }
+        }
+
+        if (isset($_SESSION['fav'])) {
+          if (is_array($_SESSION['fav'])) {
+            $favCount = count($_SESSION['fav']);
+          } else {
+            $favCount = 0; // Default value if $_SESSION['fav'] is not an array
+          }
+        } else {
+          $favCount = 0; // Default value if $_SESSION['fav'] is not set
         }
 
         $html = "
@@ -62,10 +73,16 @@
             <h5 style='margin-block-start: 0; margin-block-end: 0'>Welcome back</h5>
             <h4 style='margin-block-start: 0; margin-block-end: 0'>" . $_SESSION["user"]["name"] . "</h4>
           </div>
+          <a href='/key_quest/index.php?action=wishlist'>
+            <button class='wishlist-button'>
+              <i class='material-icons-outlined'>favorite_border</i> Wishlist
+              <div class='basket-quantity-badge'>$favCount</div>
+            </button>
+          </a>
           <a href='/key_quest/index.php?action=basket'>
             <button class='basket-button'>
               <i class='material-icons-outlined'>shopping_cart</i> Basket
-              <div class='basket-quantity-badge'>$totalItems</div>
+              <div class='basket-quantity-badge'>$basketCount</div>
             </button>
           </a>
           <button class='logout-button' onclick='showLogoutModal()'>
