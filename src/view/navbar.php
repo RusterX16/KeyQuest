@@ -30,28 +30,32 @@
         </ul>
       </li>
       <li class="submenu">
-        <i class="material-icons-outlined">keyboard</i>
+        <a href="/key_quest/index.php?action=home&type=keyboard">
+          <i class="material-icons-outlined">keyboard</i>
           <span>Keyboards</span>
-        <ul class="submenu-items">
-          <li><a href="#">Full (100%)</a></li>
-          <li><a href="#">TKL (80%)</a></li>
-          <li><a href="#">75%</a></li>
-          <li><a href="#">65%</a></li>
-          <li><a href="#">60%</a></li>
-          <li><a href="#">Others</a></li>
-        </ul>
+          <ul class="submenu-items">
+            <li><a href="#">Full (100%)</a></li>
+            <li><a href="#">TKL (80%)</a></li>
+            <li><a href="#">75%</a></li>
+            <li><a href="#">65%</a></li>
+            <li><a href="#">60%</a></li>
+            <li><a href="#">Others</a></li>
+          </ul>
+        </a>
       </li>
       <li class="submenu">
-        <i class="material-icons-outlined">extension</i>
+        <a href="/key_quest/index.php?action=home&type=keycaps">
+          <i class="material-icons-outlined">extension</i>
           <span>Keycaps</span>
-        <ul class="submenu-items">
-          <li><a href="#">Group By</a></li>
-          <li><a href="#">Keycaps Set</a></li>
-          <li><a href="#">Artisanal keycaps</a></li>
-        </ul>
+          <ul class="submenu-items">
+            <li><a href="#">Group By</a></li>
+            <li><a href="#">Keycaps Set</a></li>
+            <li><a href="#">Artisanal keycaps</a></li>
+          </ul>
+        </a>
       </li>
       <li class="submenu">
-        <a href="/key_quest/index.php?action=displaySwitches">
+        <a href="/key_quest/index.php?action=home&type=switches">
           <i class="material-icons-outlined">settings_remote</i>
             <span>Switches</span>
           <ul class="submenu-items">

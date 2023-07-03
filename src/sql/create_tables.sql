@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS `users`;
 DROP TABLE IF EXISTS `products`;
-DROP TABLE IF EXISTS `basket`;
-DROP TABLE IF EXISTS `item`;
+DROP TABLE IF EXISTS `baskets`;
+DROP TABLE IF EXISTS `items`;
 DROP TABLE IF EXISTS `sets`;
 DROP TABLE IF EXISTS `keyboards`;
 DROP TABLE IF EXISTS `keycaps`;
@@ -30,21 +30,20 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE `basket` (
+CREATE TABLE `baskets` (
   id INT AUTO_INCREMENT,
   user_id INT,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 );
 
-CREATE TABLE `item` (
+CREATE TABLE `items` (
   product_id INT,
   basket_id INT,
   quantity INT,
   PRIMARY KEY (`product_id`, `basket_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
-  FOREIGN KEY (`basket_id`) REFERENCES `basket` (`id`),
-  CHECK (`quantity` > 0)
+  FOREIGN KEY (`basket_id`) REFERENCES `baskets` (`id`)
 );
 
 CREATE TABLE `sets` (

@@ -21,11 +21,11 @@
       <div class="left">
         <div class="img-container">
           <img
-            src="/key_quest/src/resources/images/logo.png"
-            alt="logo"
-            class="logo"
-            width="50px"
-            height="50px"
+              src="/key_quest/src/resources/images/logo.png"
+              alt="logo"
+              class="logo"
+              width="50px"
+              height="50px"
           />
         </div>
         <h2 class="title">Key-Quest</h2>
@@ -47,11 +47,27 @@
         </a>
       ";
       } else {
+        $totalItems = 0;
+
+        if (isset($_SESSION['basket']['items'])) {
+          foreach ($_SESSION['basket']['items'] as $item) {
+            if (is_array($item) && isset($item['quantity'])) {
+              $totalItems += intval($item['quantity']); // Convert the quantity to an integer before adding
+            }
+          }
+        }
+
         $html = "
           <div class='welcome-message'>
             <h5 style='margin-block-start: 0; margin-block-end: 0'>Welcome back</h5>
             <h4 style='margin-block-start: 0; margin-block-end: 0'>" . $_SESSION["user"]["name"] . "</h4>
           </div>
+          <a href='/key_quest/index.php?action=basket'>
+            <button class='basket-button'>
+              <i class='material-icons-outlined'>shopping_cart</i> Basket
+              <div class='basket-quantity-badge'>$totalItems</div>
+            </button>
+          </a>
           <button class='logout-button' onclick='showLogoutModal()'>
             <i class='material-icons-outlined'>logout</i> Logout
           </button>

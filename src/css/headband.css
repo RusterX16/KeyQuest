@@ -1,6 +1,8 @@
 header {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 10;
 }
 
 header .headband {
@@ -102,7 +104,55 @@ header .headband .right .welcome-message {
   margin-right: 20px
 }
 
+header .headband .right .basket-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  background-color: var(--tertiary-color);
+  color: var(--light-color);
+  margin-right: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+header .headband .right .basket-button .material-icons-outlined,
+header .headband .right .basket-button .material-icons {
+  font-size: 16px;
+}
+
+header .headband .right .basket-button i {
+  margin-right: 8px;
+}
+
+header .headband .right .basket-button:hover {
+  background-color: var(--light-color);
+  color: var(--secondary-color);
+}
+
+.basket-quantity-badge {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  top: -10px;
+  right: -10px;
+  width: 5px;
+  height: 15px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  color: var(--light-color);
+  font-size: 12px;
+}
+
 /* Media Queries */
+
 @media (max-width: 768px) {
   header .headband .left .title {
     display: none;

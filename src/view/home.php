@@ -29,21 +29,27 @@ ini_set('display_errors', 1);
   ]);
   $pdo = Model::getPDO();
 
-  $sql = 'SELECT * FROM products';
+  $sql = 'SELECT * FROM products' . (isset($_GET['type']) ? ' WHERE type = :type' : '');
   $query = $pdo -> prepare($sql);
+
+  if (isset($_GET['type'])) {
+    $query -> bindValue(':type', $_GET['type']);
+  }
   $query -> execute();
   $result = $query -> fetchAll();
 
   foreach ($result as $key => $value) {
     echo "
       <div class='product-card'>
-        <div class='product-image' style='background-image: url({$value['image_url']});'>
-          <!-- Image will be placed here -->
+        <div class='product-image'>
+          <img src='{$value['image_url']}' alt='product image'>
         </div>
         <h4 class='product-name'>{$value['name']}</h4>
         <p class='product-price'>\${$value['price']}</p>
         <div class='buttons'>
-          <a href='#' class='add-to-cart'><i class='material-icons-outlined'>shopping_cart</i>Add to Cart</a>
+          <a href='/key_quest/index.php?action=trtAddToBasket&id={$value['id']}&price={$value['price']}' class='add-to-cart'>
+            <i class='material-icons-outlined'>shopping_cart</i>Add to Cart
+          </a>
           <a href='#' class='add-to-fav'>
             <i class='material-icons-outlined'>favorite_border</i>
             <i class='material-icons'>favorite</i>
