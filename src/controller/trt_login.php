@@ -50,7 +50,7 @@ $query -> execute([
 ]);
 $basket = $query -> fetch(PDO::FETCH_ASSOC);
 
-// ! TO REMOVE IF UNPASSABLE
+// Create a basket if it doesn't exist
 if (!$basket) {
   $sql = "INSERT INTO baskets (user_id) VALUES (:user_id)";
   $query = $pdo -> prepare($sql);
@@ -65,7 +65,6 @@ $query->execute([
   'user_id' => $_SESSION['user']['id']
 ]);
 $fav = $query->fetchAll(PDO::FETCH_COLUMN, 0);
-
 
 // Fetch items in the basket
 $sql = "SELECT * FROM items WHERE basket_id = :basket_id";

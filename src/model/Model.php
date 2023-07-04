@@ -8,13 +8,7 @@ require_once File ::buildPath([
 #[AllowDynamicProperties] class Model
 {
 
-  private PDO $pdo;
-
-  public function __construct(PDO $pdo)
-  {
-    $this -> pdo = $pdo;
-    self ::connect();
-  }
+  private static ?PDO $pdo = null;
 
   private static function connect(): void
   {
@@ -32,6 +26,9 @@ require_once File ::buildPath([
 
   public static function getPDO(): PDO
   {
+    if (is_null(self ::$pdo)) {
+      self ::connect();
+    }
     return self ::$pdo;
   }
 }

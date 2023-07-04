@@ -1,18 +1,3 @@
-@font-face {
-  font-family: 'Carbon';
-  src: url('/src/resources/fonts/carbon-font/CarbonPersonalUseBold-VGedw.ttf');
-}
-
-@font-face {
-  font-family: 'Lemon Jelly';
-  src: url('/src/resources/fonts/lemon-jelly-font/LemonJellyPersonalUse-dEqR.ttf');
-}
-
-@font-face {
-  font-family: 'Youth Touch';
-  src: url('/src/resources/fonts/youth-touch-font/YouthTouchDemoRegular-4VwY.ttf');
-}
-
 :root {
   --primary-color: #FF8C00;
   --secondary-color: #696969;
@@ -24,7 +9,6 @@
   --danger-color: #dc3545;
   --warning-color: #ffc107;
   --info-color: #17a2b8;
-  --link-color: #007bff;
 }
 
 /* Global */

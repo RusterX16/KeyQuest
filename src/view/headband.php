@@ -42,7 +42,8 @@
         $html = "
         <a href='/key_quest/index.php?action=login'>
           <button class='login-button'>
-            <i class='material-icons-outlined'>login</i> Login
+            <i class='material-icons-outlined'>login</i>
+            <span>Login</span>
           </button>
         </a>
       ";
@@ -75,18 +76,21 @@
           </div>
           <a href='/key_quest/index.php?action=wishlist'>
             <button class='wishlist-button'>
-              <i class='material-icons-outlined'>favorite_border</i> Wishlist
+              <i class='material-icons-outlined'>favorite_border</i>
+              <span>Wishlist</span>
               <div class='basket-quantity-badge'>$favCount</div>
             </button>
           </a>
           <a href='/key_quest/index.php?action=basket'>
             <button class='basket-button'>
-              <i class='material-icons-outlined'>shopping_cart</i> Basket
+              <i class='material-icons-outlined'>shopping_cart</i>
+              <span>Basket</span>
               <div class='basket-quantity-badge'>$basketCount</div>
             </button>
           </a>
           <button class='logout-button' onclick='showLogoutModal()'>
-            <i class='material-icons-outlined'>logout</i> Logout
+            <i class='material-icons-outlined'>logout</i>
+            <span>Logout</span>
           </button>
         ";
       }

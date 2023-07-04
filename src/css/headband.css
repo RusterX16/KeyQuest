@@ -1,8 +1,9 @@
 header {
   display: flex;
   flex-direction: column;
-  position: relative;
+  position: sticky;
   z-index: 10;
+  top: 0;
 }
 
 header .headband {
@@ -10,7 +11,6 @@ header .headband {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
   background: var(--primary-color);
   box-shadow: var(--secondary-color) 0 0 10px;
 }
@@ -33,6 +33,10 @@ header .headband .left .title {
     1px -1px 1px var(--light-color),
     -1px 1px 1px var(--light-color),
     1px 1px 1px var(--light-color);
+}
+
+header .headband .middle .slogan {
+  margin: 0 20px;
 }
 
 header .headband .right {
@@ -165,16 +169,24 @@ header i.material-icons-outlined {
   header .headband .left .title {
     display: none;
   }
-}
 
-@media (max-width: 768px) {
-  header .headband .left .title {
+  header .headband .right .basket-button span,
+  header .headband .right .wishlist-button span,
+  header .headband .right .login-button span,
+  header .headband .right .logout-button span {
     display: none;
+  }
+
+  header .headband .right .basket-button i,
+  header .headband .right .wishlist-button i,
+  header .headband .right .login-button i,
+  header .headband .right .logout-button i {
+    margin-right: 0;
   }
 }
 
-@media (max-width: 480px) {
-  header .headband .right .welcome-message {
+@media (max-width: 520px) {
+  header .headband .middle .slogan {
     display: none;
   }
 }

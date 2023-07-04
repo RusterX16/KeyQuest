@@ -14,12 +14,14 @@ $email = $_POST['email-register'];
 $password = $_POST['password-register'];
 $avatar_url = 'src/resources/images/default-avatar.png';
 
+// Check if an avatar image was uploaded
 if (isset($_FILES['avatar-input']) && $_FILES['avatar-input']['error'] === UPLOAD_ERR_OK) {
   $tempFilePath = $_FILES['avatar-input']['tmp_name'];
   $extension = pathinfo($_FILES['avatar-input']['name'], PATHINFO_EXTENSION);
   $avatarFilename = uniqid() . 'view' . $extension;
   $avatarPath = 'src/resources/avatars/' . $avatarFilename;
 
+  // Move the uploaded file to the desired location
   if (move_uploaded_file($tempFilePath, $avatarPath)) {
     $avatar_url = $avatarPath;
   }
@@ -67,6 +69,7 @@ if ($query -> rowCount() > 0) {
     'avatar_url' => $avatar_url
   ];
 
+  // Create a basket for the user
   $sql = 'INSERT INTO baskets (user_id) VALUES (:user_id)';
   $query = $pdo -> prepare($sql);
   $query -> execute([

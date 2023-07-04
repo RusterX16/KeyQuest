@@ -21,14 +21,14 @@ ini_set('display_errors', 1);
 </head>
 
 <body>
-<?php include('headband.php'); ?>
+<?php include_once 'headband.php'; ?>
 <main>
   <?php
-  require_once File::buildPath([
+  require_once File ::buildPath([
     'model',
     'Model.php'
   ]);
-  $pdo = Model::getPDO();
+  $pdo = Model ::getPDO();
 
   if (isset($_GET['rel'])) {
     $rel = $_GET['rel'];
@@ -40,9 +40,9 @@ ini_set('display_errors', 1);
 
     // Assuming 'rel' refers to a table in your database:
     if (isset($_GET['type'])) {
-      $sql = 'SELECT * FROM ' . $rel . ' JOIN products ON ' . $rel . '.product_id = products.id WHERE ' . $rel . '.type = :type';
+      $sql = "SELECT * FROM $rel JOIN products ON $rel.product_id = products.id WHERE $rel.type = :type";
     } else {
-      $sql = 'SELECT * FROM ' . $rel . ' JOIN products ON ' . $rel . '.product_id = products.id';
+      $sql = "SELECT * FROM $rel JOIN products ON $rel.product_id = products.id";
     }
   } else {
     $sql = 'SELECT * FROM products';
@@ -51,15 +51,16 @@ ini_set('display_errors', 1);
     }
   }
 
-  $query = $pdo->prepare($sql);
+  $query = $pdo -> prepare($sql);
   if (isset($_GET['type'])) {
-    $query->bindValue(':type', $_GET['type']);
+    $query -> bindValue(':type', $_GET['type']);
   }
-  $query->execute();
-  $result = $query->fetchAll(PDO::FETCH_ASSOC);
+  $query -> execute();
+  $result = $query -> fetchAll(PDO::FETCH_ASSOC);
 
   foreach ($result as $value) {
     $productId = $value['id'];
+    $price = $value['price'];
     $isFavorite = isset($_SESSION['fav'][$value['id']]);
     $favoriteClass = $isFavorite ? 'favorite-active' : '';
 
@@ -71,10 +72,10 @@ ini_set('display_errors', 1);
         <h4 class='product-name'>{$value['name']}</h4>
         <p class='product-price'>\${$value['price']}</p>
         <div class='buttons'>
-          <a href='/key_quest/index.php?action=trtAddToBasket&id={$value['id']}&price={$value['price']}' class='add-to-cart'>
+          <a href='/key_quest/index.php?action=trtAddToBasket&id=$productId&price=$price' class='add-to-cart'>
             <i class='material-icons-outlined'>shopping_cart</i>Add to Cart
           </a>
-          <a href='/key_quest/index.php?action=trtToggleWishlist&id={$value['id']}' class='add-to-fav {$favoriteClass}'>
+          <a href='/key_quest/index.php?action=trtToggleWishlist&id={$value['id']}' class='add-to-fav $favoriteClass'>
             <i class='material-icons-outlined'>favorite_border</i>
             <i class='material-icons'>favorite</i>
           </a>

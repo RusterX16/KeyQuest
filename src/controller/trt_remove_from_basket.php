@@ -17,6 +17,7 @@ if (!isset($_SESSION['user'])) {
 $productId = $_GET['id'];
 $price = $_GET['price'];
 
+// Get the basket id of the related user
 $sql = "SELECT id FROM baskets WHERE user_id = :user_id";
 $query = $pdo -> prepare($sql);
 $query -> execute([

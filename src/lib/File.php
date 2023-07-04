@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class File
+ * @package lib
+ * This class is used to build paths to files.
+ */
 class File {
 
   public static function buildPath($pathArray): string {
