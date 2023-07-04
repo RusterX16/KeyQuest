@@ -28,11 +28,8 @@ header .headband .left .img-container {
 header .headband .left .title {
   margin-block-start: auto;
   margin-block-end: auto;
-  text-shadow:
-    -1px -1px 1px var(--light-color),
-    1px -1px 1px var(--light-color),
-    -1px 1px 1px var(--light-color),
-    1px 1px 1px var(--light-color);
+  text-shadow: -1px -1px 1px var(--light-color), 1px -1px 1px var(--light-color),
+    -1px 1px 1px var(--light-color), 1px 1px 1px var(--light-color);
 }
 
 header .headband .middle .slogan {
@@ -87,7 +84,7 @@ header .headband .right .logout-button:hover {
 
 header .headband .right .welcome-message {
   text-align: center;
-  margin-right: 20px
+  margin-right: 20px;
 }
 
 header .headband .right .basket-button {
