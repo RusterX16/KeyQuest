@@ -12,7 +12,8 @@
   gap: 30px;
 }
 
-.login-form, .register-form {
+.login-form,
+.register-form {
   width: 250px;
   padding: 20px;
   background-color: white;
@@ -38,7 +39,7 @@
 }
 
 .form-group input {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   border: none;
   border-bottom: 1px solid #9e9e9e;
   color: #333;
