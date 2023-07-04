@@ -1,15 +1,23 @@
 <?php
 
-require_once File::buildPath([
+require_once File ::buildPath([
   'config',
   'Conf.php'
 ]);
 
-#[AllowDynamicProperties] class Model {
+#[AllowDynamicProperties] class Model
+{
 
-  private static ?PDO $pdo = null;
+  private PDO $pdo;
 
-  private static function connect(): void {
+  public function __construct(PDO $pdo)
+  {
+    $this -> pdo = $pdo;
+    self ::connect();
+  }
+
+  private static function connect(): void
+  {
     $host = Conf ::get('host');
     $dbname = Conf ::get('dbname');
     $user = Conf ::get('user');
@@ -17,15 +25,13 @@ require_once File::buildPath([
 
     try {
       self ::$pdo = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
-    } catch(PDOException $e) {
+    } catch (PDOException $e) {
       die($e -> getMessage());
     }
   }
 
-  public static function getPDO(): PDO {
-    if(is_null(self ::$pdo)) {
-      self ::connect();
-    }
+  public static function getPDO(): PDO
+  {
     return self ::$pdo;
   }
 }

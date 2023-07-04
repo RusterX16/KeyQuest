@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Class Conf
+ * @package config
+ * Contains the configuration of the database
+ */
 class Conf {
 
   private static string $host = "localhost";

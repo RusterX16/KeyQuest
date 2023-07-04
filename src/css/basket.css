@@ -171,7 +171,6 @@
 
 .delete-item button:hover {
   background: var(--secondary-color);
-  transform: scale(1.05);
 }
 
 .delete-item button:focus {

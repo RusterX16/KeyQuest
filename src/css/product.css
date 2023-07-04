@@ -66,6 +66,10 @@
   border-radius: 10px;
 }
 
+.add-to-cart:visited {
+  color: white;
+}
+
 .add-to-cart:hover {
   background-color: var(--primary-color);
 }

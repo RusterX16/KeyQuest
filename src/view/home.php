@@ -82,9 +82,6 @@ ini_set('display_errors', 1);
       </div>
     ";
   }
-  echo '<pre>';
-  var_dump($_SESSION);
-  echo '</pre>';
   ?>
 </main>
 </body>

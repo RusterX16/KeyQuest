@@ -17,7 +17,7 @@ if (!isset($_SESSION['user'])) {
 $user_id = $_SESSION['user']['id'];
 $productId = $_GET['id'];
 
-$sql = "SELECT * FROM favorites WHERE user_id = :user_id AND product_id = :product_id";
+$sql = "SELECT DISTINCT * FROM favorites WHERE user_id = :user_id AND product_id = :product_id";
 $query = $pdo -> prepare($sql);
 $query -> execute([
   'user_id' => $user_id,

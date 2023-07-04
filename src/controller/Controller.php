@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Class Controller
+ * @package controller
+ * Contains the controller of the website
+ *
+ */
 class Controller {
 
   public static function home(): void {
