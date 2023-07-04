@@ -1,24 +1,24 @@
 @font-face {
-  font-family: 'Carbon';
-  src: url('/src/resources/fonts/carbon-font/CarbonPersonalUseBold-VGedw.ttf');
+  font-family: "Carbon";
+  src: url("/src/resources/fonts/carbon-font/CarbonPersonalUseBold-VGedw.ttf");
 }
 
 @font-face {
-  font-family: 'Lemon Jelly';
-  src: url('/src/resources/fonts/lemon-jelly-font/LemonJellyPersonalUse-dEqR.ttf');
+  font-family: "Lemon Jelly";
+  src: url("/src/resources/fonts/lemon-jelly-font/LemonJellyPersonalUse-dEqR.ttf");
 }
 
 @font-face {
-  font-family: 'Youth Touch';
-  src: url('/src/resources/fonts/youth-touch-font/YouthTouchDemoRegular-4VwY.ttf');
+  font-family: "Youth Touch";
+  src: url("/src/resources/fonts/youth-touch-font/YouthTouchDemoRegular-4VwY.ttf");
 }
 
 :root {
-  --primary-color: #FF8C00;
+  --primary-color: #ff8c00;
   --secondary-color: #696969;
   --tertiary-color: #708090;
-  --light-color: #FFF0F5;
-  --gray-color: #E0FFFF;
+  --light-color: #fff0f5;
+  --gray-color: #e0ffff;
 
   --success-color: #28a745;
   --danger-color: #dc3545;
@@ -30,7 +30,7 @@
 /* Global */
 
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 body {
