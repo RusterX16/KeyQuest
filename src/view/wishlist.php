@@ -21,12 +21,12 @@ session_start();
 <main>
   <?php
   // Include the necessary file
-  require_once File::buildPath([
+  require_once File ::buildPath([
     'model',
     'Model.php'
   ]);
   // Get the PDO object
-  $pdo = Model::getPDO();
+  $pdo = Model ::getPDO();
 
   if (empty($_SESSION['fav'])) {
     // Display message if no products in favorites
@@ -40,9 +40,9 @@ session_start();
     // Retrieve products from the database based on wishlist IDs
     $sql = "SELECT * FROM products p JOIN favorites f ON p.id = f.product_id
         WHERE id IN (" . implode(',', $wishlistIds) . ")";
-    $query = $pdo->prepare($sql);
-    $query->execute();
-    $products = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query = $pdo -> prepare($sql);
+    $query -> execute();
+    $products = $query -> fetchAll(PDO::FETCH_ASSOC);
 
     // Display products
     foreach ($products as $product) {

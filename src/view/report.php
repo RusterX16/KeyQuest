@@ -13,7 +13,7 @@ session_start();
   <link rel="stylesheet" href="src/css/report.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
   <script src="/key_quest/src/js/script.js" type="text/javascript"></script>
-  <title>Basket</title>
+  <title>Report</title>
 </head>
 <body>
 <?php include_once 'headband.php'; ?>

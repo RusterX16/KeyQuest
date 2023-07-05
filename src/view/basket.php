@@ -61,14 +61,17 @@ session_start();
         $itemTotal = $price * $quantity;
         $totalPrice += $itemTotal;
         $id = $product['id'];
+        $isFavorite = isset($_SESSION['fav'][$id]);
+        $favoriteClass = $isFavorite ? 'favorite-active' : '';
+
         ?>
         <div class='product'>
           <div class='product-image'>
             <img src='<?php echo $imageUrl; ?>' alt='<?php echo $name; ?>'>
           </div>
           <div class='product-info'>
-            <h3 class='product-name'><?php echo $name; ?></h3>
-            <p class='product-price'><?php echo $price; ?> $</p>
+            <h3><?php echo $name; ?></h3>
+            <p><?php echo $price; ?> $</p>
             <div class='product-quantity'>
               <div class='quantity-control'>
                 <form
@@ -80,7 +83,7 @@ session_start();
                     <i class='material-icons'>remove</i>
                   </button>
                 </form>
-                <input type='number' value='<?php echo $quantity; ?>' min='1' max='999' class='quantity-input'
+                <input class='quantity-input' type='number' value='<?php echo $quantity; ?>' min='1' max='999'
                        name='quantity' data-id='<?php echo $id; ?>' data-price='<?php echo $price; ?>'>
                 <form
                     action="<?php echo
@@ -93,16 +96,23 @@ session_start();
                 <input type='hidden' name='id' value='<?php echo $id; ?>'>
                 <input type='hidden' name='price' value='<?php echo $price; ?>'>
               </div>
-              <form
-                  class='delete-item'
-                  action='/key_quest/index.php?action=trtRemoveFromBasket&id=<?php echo $id; ?>&price=<?php echo $price; ?>'
-                  method='POST'>
-                <button type='submit' name='id' value='<?php echo $id; ?>'>
-                  <i class='material-icons-outlined'>delete</i>Delete
-                </button>
-              </form>
+              <div class="buttons">
+                <!-- Delete item form -->
+                <div class='delete-item'>
+                  <a href='/key_quest/index.php?action=trtRemoveFromBasket&id=<?php echo $id; ?>&price=<?php echo $price; ?>'>
+                    <button type='submit' name='id' value='<?php echo $id; ?>'>
+                      <i class='material-icons-outlined'>delete</i>Delete
+                    </button>
+                  </a>
+                </div>
+                <!-- Favorite item form -->
+                <a href='/key_quest/index.php?action=trtToggleWishlist&id=<?php echo $id ?>' class='add-to-fav <?php echo $favoriteClass ?>'>
+                  <i class='material-icons-outlined'>favorite_border</i>
+                  <i class='material-icons'>favorite</i>
+                </a>
+              </div>
             </div>
-            <p class='product-total-price'>Total price: <?php echo $itemTotal; ?> $</p>
+            <p class='total-price'>Total price: <?php echo $itemTotal; ?> $</p>
           </div>
         </div>
         <?php
