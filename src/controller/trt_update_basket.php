@@ -32,15 +32,20 @@ if (!isset($_SESSION['basket'])) {
   $_SESSION['basket'] = [];
 }
 
-if (!isset($_SESSION['basket']['items'][$productId])) {
+if (!isset($_SESSION['basket'][$productId])) {
   // If the item is not in the basket, add it with the given quantity and price
-  $_SESSION['basket']['items'][$productId] = [
+  $_SESSION['basket'][$productId] = [
     'quantity' => $quantity,
     'price' => $price
   ];
 } else {
-  // If the item is already in the basket, update the quantity based on the operation
-  $_SESSION['basket']['items'][$productId]['quantity'] += $operation == 'minus' ? -1 : 1;
+  if (!isset($operation)) {
+    // If the item is already in the basket, update the quantity with the given quantity
+    $_SESSION['basket'][$productId]['quantity'] = $quantity;
+  } else {
+    // If the item is already in the basket, update the quantity based on the operation
+    $_SESSION['basket'][$productId]['quantity'] += $operation == 'minus' ? -1 : 1;
+  }
 
   $sql = "SELECT * FROM items WHERE product_id = :id";
   $query = $pdo -> prepare($sql);

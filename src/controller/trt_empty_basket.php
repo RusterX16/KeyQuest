@@ -29,8 +29,8 @@ if (!isset($_SESSION['basket'])) {
 }
 
 // Remove all items from the basket
-if (isset($_SESSION['basket']['items'])) {
-  unset($_SESSION['basket']['items']);
+if (isset($_SESSION['basket'])) {
+  unset($_SESSION['basket']);
 
   // Delete all items from the items table associated with the basket
   $sql = "DELETE FROM items WHERE basket_id = :id";

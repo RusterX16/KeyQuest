@@ -63,7 +63,7 @@ CREATE TABLE `sets` (
 
 CREATE TABLE `keyboards` (
   product_id INT,
-  size ENUM('full', 'tkl', '75', '65', '60', '40', 'other'),
+  type ENUM('full', 'tkl', '75', '65', '60', '40', 'other'),
   layout ENUM('ansi', 'iso', 'other'),
   rgb BOOLEAN,
   wireless BOOLEAN,
@@ -74,7 +74,7 @@ CREATE TABLE `keyboards` (
 
 CREATE TABLE `keycaps` (
   product_id INT,
-  type ENUM('groupby', 'classic', 'artisanal'),
+  type ENUM('group_by', 'classic', 'artisanal'),
   PRIMARY KEY (`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
@@ -105,14 +105,14 @@ CREATE TABLE `pcbs` (
 
 CREATE TABLE `tools` (
   product_id INT,
-  type ENUM('lube', 'switch opener', 'switch puller', 'keycap puller', 'lube station', 'other'),
+  type ENUM('switch_puller', 'keycaps_puller', 'brush', 'lube', 'switch_opener', 'lube_station'),
   PRIMARY KEY (`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `accessories` (
   product_id INT,
-  type ENUM('mouse pad', 'wrist rest', 'stabilizers', 'foam', 'cables', 'house', 'knobs', 'buffers', 'o rings', 'stickers', 'other'),
+  type ENUM('mouse_pad', 'wrist_rest', 'stabilizers', 'foam', 'cables', 'house', 'knobs', 'buffers', 'o_rings', 'stickers'),
   PRIMARY KEY (`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );

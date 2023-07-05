@@ -32,17 +32,11 @@ ini_set('display_errors', 1);
 
   if (isset($_GET['rel'])) {
     $rel = $_GET['rel'];
-
-    if ($rel == 'keyboards') {
-      $_GET['size'] = $_GET['type']; // Copy the value from 'type' to 'size'
-      unset($_GET['type']);
-    }
+    $sql = "SELECT * FROM $rel JOIN products ON $rel.product_id = products.id";
 
     // Assuming 'rel' refers to a table in your database:
     if (isset($_GET['type'])) {
-      $sql = "SELECT * FROM $rel JOIN products ON $rel.product_id = products.id WHERE $rel.type = :type";
-    } else {
-      $sql = "SELECT * FROM $rel JOIN products ON $rel.product_id = products.id";
+      $sql .= " WHERE $rel.type = :type";
     }
   } else {
     $sql = 'SELECT * FROM products';
@@ -57,6 +51,10 @@ ini_set('display_errors', 1);
   }
   $query -> execute();
   $result = $query -> fetchAll(PDO::FETCH_ASSOC);
+
+  if (!$result) {
+    echo "<p style='margin: 20px'>No product in this category</p>";
+  }
 
   foreach ($result as $value) {
     $productId = $value['id'];

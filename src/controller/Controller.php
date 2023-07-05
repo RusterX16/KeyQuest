@@ -36,6 +36,13 @@ class Controller {
     ]);
   }
 
+  public static function report() {
+    require_once File ::buildPath([
+      'view',
+      'report.php'
+    ]);
+  }
+
   public static function trtLogin(): void {
     require_once File ::buildPath([
       'controller',

@@ -8,10 +8,10 @@ session_start();
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="src/resources/icons/logo.ico">
   <link rel="stylesheet" href="src/css/style.css"/>
   <link rel="stylesheet" href="src/css/basket.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-  <link rel="icon" href="../resources/images/logo.png" type="image/x-icon">
   <script src="/key_quest/src/js/script.js" type="text/javascript"></script>
   <script src="/key_quest/src/js/basket.js" type="text/javascript"></script>
   <title>Wishlist</title>

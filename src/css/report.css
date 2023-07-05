@@ -1,0 +1,45 @@
+body {
+  background-color: var(--light-color);
+  margin: 20px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin: 20px;
+}
+
+.table-style {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--secondary-color);
+  white-space: nowrap;
+}
+
+.table-style th,
+.table-style td {
+  padding: 10px;
+  border: 1px solid var(--gray-color);
+  text-align: left;
+}
+
+.table-style th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.table-style tr:nth-child(odd) {
+  background-color: white;
+}
+
+.table-heading {
+  color: black;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}

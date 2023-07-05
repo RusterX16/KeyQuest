@@ -51,8 +51,8 @@
         $basketCount = 0;
         $favCount = 0;
 
-        if (isset($_SESSION['basket']['items'])) {
-          foreach ($_SESSION['basket']['items'] as $item) {
+        if (isset($_SESSION['basket'])) {
+          foreach ($_SESSION['basket'] as $item) {
             if (is_array($item) && isset($item['quantity'])) {
               $basketCount += intval($item['quantity']); // Convert the quantity to an integer before adding
             }
@@ -98,7 +98,7 @@
       ?>
     </div>
   </div>
-  <?php include('navbar.php'); ?>
+  <?php include 'navbar.php'; ?>
 </header>
 </body>
 </html>

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Belanosima";
+  src: url("/src/resources/fonts/Belanosima/Belanosima-Regular.ttf");
+}
+
 :root {
   --primary-color: #ff8c00;
   --secondary-color: #696969;
@@ -5,10 +10,10 @@
   --light-color: #fff0f5;
   --gray-color: #e0ffff;
 
-  --success-color: #28a745;
-  --danger-color: #dc3545;
-  --warning-color: #ffc107;
-  --info-color: #17a2b8;
+  --success-color: #4fC559; /* Medium Sea Green: A less saturated, more modern color for success messages */
+  --danger-color: #E0333E; /* Light Coral: A softer, less harsh color for danger messages */
+  --warning-color: #FFC55C; /* Navajo White: A softer, less intense color for warnings */
+  --info-color: #4A83C3; /* Cadet Blue: A softer, less intense color for informational messages */
 }
 
 /* Global */

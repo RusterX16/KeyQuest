@@ -30,8 +30,8 @@ if (!isset($_SESSION['basket'])) {
 }
 
 // Remove item from basket
-if (isset($_SESSION['basket']['items'][$productId])) {
-  unset($_SESSION['basket']['items'][$productId]);
+if (isset($_SESSION['basket'][$productId])) {
+  unset($_SESSION['basket'][$productId]);
 
   $sql = "DELETE FROM items WHERE product_id = :id";
   $query = $pdo -> prepare($sql);

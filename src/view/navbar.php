@@ -22,12 +22,14 @@
           </a>
         </li>
       <li class="submenu">
-        <i class="material-icons-outlined">build</i>
+        <a href="/key_quest/index.php?action=home&type=set">
+          <i class="material-icons-outlined">build</i>
           <span>DIY Kit</span>
-        <ul class="submenu-items">
-          <li><a href="#">Built in Set</a></li>
-          <li><a href="#">Custom Set</a></li>
-        </ul>
+          <ul class="submenu-items">
+            <li><a href="/key_quest/index.php?action=home&type=set">Built in Set</a></li>
+            <li><a href="/key_quest/index.php?action=home&type=set">Custom Set</a></li>
+          </ul>
+        </a>
       </li>
       <li class="submenu">
         <a href="/key_quest/index.php?action=home&type=keyboard">
@@ -48,9 +50,9 @@
           <i class="material-icons-outlined">extension</i>
           <span>Keycaps</span>
           <ul class="submenu-items">
-            <li><a href="#">Group By</a></li>
-            <li><a href="#">Keycaps Set</a></li>
-            <li><a href="#">Artisanal keycaps</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=keycaps&type=groupby">Group By</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=keycaps&type=classic">Keycaps Set</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=keycaps&type=artisanal">Artisanal keycaps</a></li>
           </ul>
         </a>
       </li>
@@ -68,56 +70,86 @@
         </a>
       </li>
       <li class="submenu">
-        <i class="material-icons-outlined">dns</i>
+        <a href="/key_quest/index.php?action=home&type=case">
+          <i class="material-icons-outlined">dns</i>
           <span>Cases</span>
-        <ul class="submenu-items">
-          <li><a href="#">Aluminium cases</a></li>
-          <li><a href="#">Plastic cases</a></li>
-          <li><a href="#">Wooden cases</a></li>
-        </ul>
+          <ul class="submenu-items">
+            <li><a href="/key_quest/index.php?action=home&rel=cases&type=alluminium">Aluminium cases</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=cases&type=plastic">Plastic cases</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=cases&type=wooden">Wooden cases</a></li>
+          </ul>
+        </a>
       </li>
       <li class="submenu">
-        <i class="material-icons-outlined">memory</i>
+        <a href="/key_quest/index.php?action=home&type=pcb">
+          <i class="material-icons-outlined">memory</i>
           <span>PCBs</span>
-        <ul class="submenu-items">
-          <li><a href="#">North Facing PCBs</a></li>
-          <li><a href="#">South Facing PCBs</a></li>
-        </ul>
+          <ul class="submenu-items">
+            <li><a href="/key_quest/index.php?action=home&rel=pcbs&type=north">North Facing PCBs</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=pcbs&type=south">South Facing PCBs</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=pcbs&type=other">Others</a></li>
+          </ul>
+        </a>
       </li>
       <li class="submenu">
-        <i class="material-icons-outlined">carpenter</i>
+        <a href="/key_quest/index.php?action=home&type=tool">
+          <i class="material-icons-outlined">carpenter</i>
           <span>Tools</span>
-        <ul class="submenu-items">
-          <li><a href="#">Switch puller</a></li>
-          <li><a href="#">Keycaps puller</a></li>
-          <li><a href="#">Brushes</a></li>
-          <li><a href="#">Lube</a></li>
-          <li><a href="#">Switch opener</a></li>
-          <li><a href="#">Lube station</a></li>
-        </ul>
+          <ul class="submenu-items">
+            <li><a href="/key_quest/index.php?action=home&rel=tools&type=switch_puller">Switch puller</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=tools&type=keycaps_puller">Keycaps puller</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=tools&type=brush">Brushes</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=tools&type=lube">Lube</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=tools&type=switch_opener">Switch opener</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=tools&type=lube_station">Lube station</a></li>
+          </ul>
+        </a>
       </li>
       <li class="submenu">
-        <i class="material-icons-outlined">devices_other</i>
+        <a href="/key_quest/index.php?action=home&type=accessory">
+          <i class="material-icons-outlined">devices_other</i>
           <span>Accessories</span>
-        <ul class="submenu-items">
-          <li><a href="#">Mouse pads</a></li>
-          <li><a href="#">Wrist rest</a></li>
-          <li><a href="#">Stabilizers</a></li>
-          <li><a href="#">Foam</a></li>
-          <li><a href="#">House</a></li>
-          <li><a href="#">Knobs</a></li>
-          <li><a href="#">Buffers</a></li>
-          <li><a href="#">O-rings</a></li>
-          <li><a href="#">Stickers</a></li>
-        </ul>
+          <ul class="submenu-items">
+            <li><a href="/key_quest/index.php?action=home&rel=accessories&type=mouse_pad">Mouse pads</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=accessories&type=wrist_rest">Wrist rest</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=accessories&type=stabilizers">Stabilizers</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=accessories&type=foam">Foam</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=accessories&type=house">House</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=accessories&type=knobs">Knobs</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=accessories&type=buffers">Buffers</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=accessories&type=o_rings">O-rings</a></li>
+            <li><a href="/key_quest/index.php?action=home&rel=accessories&type=stickers">Stickers</a></li>
+          </ul>
+        </a>
       </li>
     </ul>
   </div>
   <div class="others">
     <ul class="menu-items">
-      <li><i class="material-icons">info</i> <a href="#"><span>About</span></a></li>
-      <li><i class="material-icons">mail</i> <a href="#"><span>Contact</span></a></li>
-      <li><i class="material-icons">help</i> <a href="#"><span>FAQ</span></a></li>
+      <li>
+        <i class="material-icons">assessment</i>
+        <a href="/key_quest/index.php?action=report">
+          <span>Report</span>
+        </a>
+      </li>
+      <li>
+        <i class="material-icons">info</i>
+        <a href="/key_quest/index.php?">
+          <span>About</span>
+        </a>
+      </li>
+      <li>
+        <i class="material-icons">mail</i>
+        <a href="/key_quest/index.php">
+          <span>Contact</span>
+        </a>
+      </li>
+      <li>
+        <i class="material-icons">help</i>
+        <a href="/key_quest/index.php">
+          <span>FAQ</span>
+        </a>
+      </li>
     </ul>
   </div>
 </nav>

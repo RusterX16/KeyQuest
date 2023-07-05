@@ -92,7 +92,7 @@ header .headband .right .basket-button {
   flex-direction: row;
   align-items: center;
   position: relative;
-  background-color: var(--tertiary-color);
+  background-color: var(--secondary-color);
   color: var(--light-color);
   margin-right: 16px;
   padding: 10px;
@@ -113,7 +113,7 @@ header .headband .right .wishlist-button {
   flex-direction: row;
   align-items: center;
   position: relative;
-  background-color: var(--tertiary-color);
+  background-color: var(--secondary-color);
   color: var(--light-color);
   margin-right: 16px;
   padding: 10px;
@@ -155,7 +155,7 @@ header i.material-icons-outlined {
   height: 15px;
   padding: 5px 10px;
   border-radius: 50%;
-  background-color: var(--secondary-color);
+  background-color: var(--info-color);
   color: var(--light-color);
   font-size: 12px;
 }

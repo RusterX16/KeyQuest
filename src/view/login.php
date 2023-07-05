@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="src/resources/icons/logo.ico">
   <link rel="stylesheet" href="/key_quest/src/css/style.css"/>
   <link rel="stylesheet" href="/key_quest/src/css/login.css"/>
   <script src="/key_quest/src/js/script.js" type="text/javascript"></script>
@@ -10,7 +11,7 @@
   <title>Login</title>
 </head>
 <body>
-<?php include('headband.php'); ?>
+<?php include 'headband.php' ?>
 <main>
   <div class="container">
     <div class="login-register-container">
