@@ -28,10 +28,12 @@ session_start();
   $pdo = Model ::getPDO();
 
   if (empty($_SESSION['basket'])) {
+    // Display message if basket is empty
     echo '
-      <p style="margin-left: 10px">Your basket is empty. 
-        <a href="/key_quest/index.php?action=home" style="text-decoration: underline">Jump to shop</a>
-      </p>
+        <p style="margin-left: 10px">
+          Your basket is empty.
+          <a href="/key_quest/index.php?action=home" style="text-decoration: underline">Jump to shop</a>
+        </p>
       ';
   } else {
     $basketItems = $_SESSION['basket'];
@@ -39,7 +41,8 @@ session_start();
     $totalPrice = 0;
 
     foreach ($basketItems as $productId => $item) {
-      if (is_numeric($productId)) {  // only add numeric product ids
+      if (is_numeric($productId)) {
+        // Only add numeric product ids to the tabId array
         $tabId[] = $productId;
       }
     }
@@ -108,9 +111,11 @@ session_start();
       <p class='total-price'>Total: <?php echo $totalPrice; ?> $</p>
       <?php
     } else {
+      // Display message if basket is empty
       echo '
-        <p style="margin-left: 10px">Your basket is empty.
-        <a href="/key_quest/index.php?action=home" style="text-decoration: underline">Jump to shop</a>
+        <p style="margin-left: 10px">
+          Your basket is empty.
+          <a href="/key_quest/index.php?action=home" style="text-decoration: underline">Jump to shop</a>
         </p>
       ';
     }

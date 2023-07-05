@@ -9,6 +9,7 @@ require_once File ::buildPath([
 
 $pdo = Model ::getPdo();
 
+// Check if the user is logged in
 if (!isset($_SESSION['user'])) {
   header('Location: /key_quest/index.php?action=login');
   exit();
@@ -25,6 +26,7 @@ $query -> execute([
 ]);
 $result = $query -> fetch(PDO::FETCH_ASSOC);
 
+// Check if the basket is already stored in the session
 if (!isset($_SESSION['basket'])) {
   $_SESSION['basket'] = [];
 }
@@ -33,6 +35,7 @@ if (!isset($_SESSION['basket'])) {
 if (isset($_SESSION['basket'][$productId])) {
   unset($_SESSION['basket'][$productId]);
 
+  // Delete the item from the database
   $sql = "DELETE FROM items WHERE product_id = :id";
   $query = $pdo -> prepare($sql);
   $query -> execute([
@@ -40,5 +43,6 @@ if (isset($_SESSION['basket'][$productId])) {
   ]);
 }
 
+// Redirect to the basket page
 header('Location: /key_quest/index.php?action=basket');
 exit();

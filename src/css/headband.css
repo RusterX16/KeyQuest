@@ -29,7 +29,7 @@ header .headband .left .title {
   margin-block-start: auto;
   margin-block-end: auto;
   text-shadow: -1px -1px 1px var(--light-color), 1px -1px 1px var(--light-color),
-    -1px 1px 1px var(--light-color), 1px 1px 1px var(--light-color);
+  -1px 1px 1px var(--light-color), 1px 1px 1px var(--light-color);
 }
 
 header .headband .middle .slogan {
@@ -129,11 +129,6 @@ header .headband .right .wishlist-button .material-icons {
   margin-right: 8px;
   transition: opacity 0.3s ease;
   color: white;
-}
-
-header .headband .right .wishlist-button:hover {
-  background-color: var(--light-color);
-  color: var(--secondary-color);
 }
 
 header i.material-icons,

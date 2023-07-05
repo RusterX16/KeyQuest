@@ -57,11 +57,11 @@
         <div class="form-group-2">
           <label class="label">Profile picture (optional)</label>
           <input
-            id="image-input"
-            class="avatar-button"
-            type="file"
-            name="avatar-url-register"
-            accept="image/*"
+              id="image-input"
+              class="avatar-button"
+              type="file"
+              name="avatar-url-register"
+              accept="image/*"
           />
         </div>
         <div class="form-group">

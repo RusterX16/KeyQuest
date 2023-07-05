@@ -39,6 +39,7 @@
       $html = '';
 
       if (!isset($_SESSION['user'])) {
+        // Display login button if user is not logged in
         $html = "
         <a href='/key_quest/index.php?action=login'>
           <button class='login-button'>
@@ -48,9 +49,11 @@
         </a>
       ";
       } else {
+        // User is logged in
         $basketCount = 0;
         $favCount = 0;
 
+        // Calculate basket count
         if (isset($_SESSION['basket'])) {
           foreach ($_SESSION['basket'] as $item) {
             if (is_array($item) && isset($item['quantity'])) {
@@ -59,16 +62,14 @@
           }
         }
 
+        // Calculate wishlist count
         if (isset($_SESSION['fav'])) {
           if (is_array($_SESSION['fav'])) {
             $favCount = count($_SESSION['fav']);
-          } else {
-            $favCount = 0; // Default value if $_SESSION['fav'] is not an array
           }
-        } else {
-          $favCount = 0; // Default value if $_SESSION['fav'] is not set
         }
 
+        // Display user information and buttons for wishlist, basket, and logout
         $html = "
           <div class='welcome-message'>
             <h5 style='margin-block-start: 0; margin-block-end: 0'>Welcome back</h5>

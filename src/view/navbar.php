@@ -15,12 +15,13 @@
 <nav>
   <div class="products">
     <ul class="menu-items">
-        <li class="submenu">
-          <a href="/key_quest/index.php?action=home">
-            <i class="material-icons-outlined">category</i>
-            <span>All Products</span>
-          </a>
-        </li>
+      <!-- Main Product Categories -->
+      <li class="submenu">
+        <a href="/key_quest/index.php?action=home">
+          <i class="material-icons-outlined">category</i>
+          <span>All Products</span>
+        </a>
+      </li>
       <li class="submenu">
         <a href="/key_quest/index.php?action=home&type=set">
           <i class="material-icons-outlined">build</i>
@@ -59,7 +60,7 @@
       <li class="submenu">
         <a href="/key_quest/index.php?action=home&type=switches">
           <i class="material-icons-outlined">settings_remote</i>
-            <span>Switches</span>
+          <span>Switches</span>
           <ul class="submenu-items">
             <li><a href="/key_quest/index.php?action=home&rel=switches&type=linear">Linear switches</a></li>
             <li><a href="/key_quest/index.php?action=home&rel=switches&type=tactile">Tactiles switches</a></li>
@@ -126,6 +127,7 @@
   </div>
   <div class="others">
     <ul class="menu-items">
+      <!-- Other Menu Items -->
       <li>
         <i class="material-icons">assessment</i>
         <a href="/key_quest/index.php?action=report">

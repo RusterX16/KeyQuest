@@ -11,6 +11,7 @@ $pdo = Model ::getPdo();
 
 // Check if the user is logged in
 if (!isset($_SESSION['user'])) {
+  // Redirect to the login page if not logged in
   header('Location: /key_quest/index.php?action=login');
   exit();
 }
@@ -20,6 +21,7 @@ $price = $_GET['price'];
 
 // Check if the basket is already stored in the session
 if (!isset($_SESSION['basket'])) {
+  // Initialize an empty basket if it doesn't exist
   $_SESSION['basket'] = [];
 }
 
@@ -35,9 +37,17 @@ if (!isset($_SESSION['basket'][$productId])) {
   $_SESSION['basket'][$productId]['quantity'] += 1;
 }
 
-echo '<pre>';
-var_dump($_SESSION['basket']);
-echo '</pre>';
+// Store the basket data in the database
+$userId = $_SESSION['user']['id'];
+
+// Prepare the SQL statement to insert or update the basket data in the database
+$sql = "INSERT INTO items (product_id, basket_id, quantity) VALUES (:product_id, :basket_id, :quantity)";
+$query = $pdo -> prepare($sql);
+$query -> execute([
+  'product_id' => $productId,
+  'basket_id' => $userId,
+  'quantity' => $_SESSION['basket'][$productId]['quantity']
+]);
 
 // Redirect back to the previous page
 header("Location: {$_SERVER['HTTP_REFERER']}");
