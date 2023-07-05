@@ -15,12 +15,12 @@
   --light-color: #fff0f5;
   --gray-color: #e0ffff;
 
-  --success-color: #4fC559;
-  --danger-color: #E0333E;
-  --warning-color: #FFC55C;
-  --info-color: #4A83C3;
+  --success-color: #4fc559;
+  --danger-color: #e0333e;
+  --warning-color: #ffc55c;
+  --info-color: #4a83c3;
 
-  --font-family: 'DM_Sans', sans-serif;
+  --font-family: "DM_Sans", sans-serif;
 }
 
 html {
