@@ -103,6 +103,7 @@ header .headband .right .basket-button {
   transition: background-color 0.3s ease;
 }
 
+header .headband .right .wishlist-button:hover,
 header .headband .right .basket-button:hover {
   background-color: var(--light-color);
   color: var(--secondary-color);
