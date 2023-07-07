@@ -10,9 +10,9 @@ Before you begin, make sure you have Wampserver installed on your machine. If no
 
 1. Clone the git repository using the command:
 
-    ```bash
-        git clone https://github.com/RusterX16/KeyQuest.git
-    ```
+   ```bash
+       git clone https://github.com/RusterX16/KeyQuest.git
+   ```
 
 2. Create a database on PHPMyAdmin called `keyquest`. You can change the name or manage it in the `/src/config` directory of the workspace.
 
