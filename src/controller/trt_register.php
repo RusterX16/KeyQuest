@@ -76,7 +76,7 @@ if ($query -> rowCount() > 0) {
   ]);
 
   // Redirect to the home page
-  header('Location: /key_quest/index.php?action=home');
+  header('Location: /KeyQuest/index.php?action=home');
   echo "Registration successful.";
 } else {
   echo "Registration failed.";

@@ -12,8 +12,8 @@ session_start();
   <link rel="stylesheet" href="src/css/style.css"/>
   <link rel="stylesheet" href="src/css/basket.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-  <script src="/key_quest/src/js/script.js" type="text/javascript"></script>
-  <script src="/key_quest/src/js/basket.js" type="text/javascript"></script>
+  <script src="/KeyQuest/src/js/script.js" type="text/javascript"></script>
+  <script src="/KeyQuest/src/js/basket.js" type="text/javascript"></script>
   <title>Wishlist</title>
 </head>
 <body>
@@ -32,7 +32,7 @@ session_start();
     // Display message if no products in favorites
     echo '
       <p style="margin-left: 10px">You have no products in favorites.
-        <a href="/key_quest/index.php?action=home" style="text-decoration: underline">Browse products</a>
+        <a href="/KeyQuest/index.php?action=home" style="text-decoration: underline">Browse products</a>
       </p>
     ';
   } else {
@@ -61,7 +61,7 @@ session_start();
           <p class='product-price'><?php echo $price; ?> $</p>
           <div class='product-actions'>
             <form class='delete-item'
-                  action='/key_quest/index.php?action=trtToggleWishlist&id=<?php echo $id; ?>'
+                  action='/KeyQuest/index.php?action=trtToggleWishlist&id=<?php echo $id; ?>'
                   method='POST'>
               <button type='submit' name='id' value='<?php echo $id; ?>'>
                 <i class='material-icons'>favorite</i>Remove from Wishlist

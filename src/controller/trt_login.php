@@ -79,5 +79,5 @@ $_SESSION['fav'] = array_fill_keys($fav, true);
 $_SESSION['basket']['items'] = $items;
 
 // Redirect to the home page
-header('Location: /key_quest/index.php?action=home');
+header('Location: /KeyQuest/index.php?action=home');
 exit();

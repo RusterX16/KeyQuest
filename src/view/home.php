@@ -52,10 +52,10 @@ $result = getProductData($rel, $type);
         <h4 class='product-name'>{$value['name']}</h4>
         <p class='product-price'>\${$value['price']}</p>
         <div class='buttons'>
-          <a href='/key_quest/index.php?action=trtAddToBasket&id=$productId&price=$price' class='add-to-cart'>
+          <a href='/KeyQuest/index.php?action=trtAddToBasket&id=$productId&price=$price' class='add-to-cart'>
             <i class='material-icons-outlined'>shopping_cart</i>Add to Cart
           </a>
-          <a href='/key_quest/index.php?action=trtToggleWishlist&id={$value['id']}' class='add-to-fav $favoriteClass'>
+          <a href='/KeyQuest/index.php?action=trtToggleWishlist&id={$value['id']}' class='add-to-fav $favoriteClass'>
             <i class='material-icons-outlined'>favorite_border</i>
             <i class='material-icons'>favorite</i>
           </a>

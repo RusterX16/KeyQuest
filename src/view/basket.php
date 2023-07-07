@@ -12,8 +12,8 @@ session_start();
   <link rel="stylesheet" href="src/css/style.css"/>
   <link rel="stylesheet" href="src/css/basket.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-  <script src="/key_quest/src/js/script.js" type="text/javascript"></script>
-  <script src="/key_quest/src/js/basket.js" type="text/javascript"></script>
+  <script src="/KeyQuest/src/js/script.js" type="text/javascript"></script>
+  <script src="/KeyQuest/src/js/basket.js" type="text/javascript"></script>
   <title>Basket</title>
 </head>
 <body>
@@ -32,7 +32,7 @@ session_start();
     echo '
         <p style="margin-left: 10px">
           Your basket is empty.
-          <a href="/key_quest/index.php?action=home" style="text-decoration: underline">Jump to shop</a>
+          <a href="/KeyQuest/index.php?action=home" style="text-decoration: underline">Jump to shop</a>
         </p>
       ';
   } else {
@@ -76,8 +76,8 @@ session_start();
               <div class='quantity-control'>
                 <form
                     action="<?php echo ($quantity <= 1) ?
-                      '/key_quest/index.php?action=trtRemoveFromBasket&id=' . $id . '&price=' . $price :
-                      '/key_quest/index.php?action=trtUpdateBasket&id=' . $id . '&price=' . $price . '&quantity=' . $quantity . '&operation=minus'; ?>"
+                      '/KeyQuest/index.php?action=trtRemoveFromBasket&id=' . $id . '&price=' . $price :
+                      '/KeyQuest/index.php?action=trtUpdateBasket&id=' . $id . '&price=' . $price . '&quantity=' . $quantity . '&operation=minus'; ?>"
                     method='POST'>
                   <button class='quantity-minus' type='submit' name='action' value='decrease'>
                     <i class='material-icons'>remove</i>
@@ -87,7 +87,7 @@ session_start();
                        name='quantity' data-id='<?php echo $id; ?>' data-price='<?php echo $price; ?>'>
                 <form
                     action="<?php echo
-                      '/key_quest/index.php?action=trtUpdateBasket&id=' . $id . '&price=' . $price . '&quantity=' . $quantity . '&operation=plus'; ?>"
+                      '/KeyQuest/index.php?action=trtUpdateBasket&id=' . $id . '&price=' . $price . '&quantity=' . $quantity . '&operation=plus'; ?>"
                     method="POST">
                   <button class='quantity-plus' type='submit' name='action' value='increase'>
                     <i class='material-icons'>add</i>
@@ -99,14 +99,14 @@ session_start();
               <div class="buttons">
                 <!-- Delete item form -->
                 <div class='delete-item'>
-                  <a href='/key_quest/index.php?action=trtRemoveFromBasket&id=<?php echo $id; ?>&price=<?php echo $price; ?>'>
+                  <a href='/KeyQuest/index.php?action=trtRemoveFromBasket&id=<?php echo $id; ?>&price=<?php echo $price; ?>'>
                     <button type='submit' name='id' value='<?php echo $id; ?>'>
                       <i class='material-icons-outlined'>delete</i>Delete
                     </button>
                   </a>
                 </div>
                 <!-- Favorite item form -->
-                <a href='/key_quest/index.php?action=trtToggleWishlist&id=<?php echo $id ?>' class='add-to-fav <?php echo $favoriteClass ?>'>
+                <a href='/KeyQuest/index.php?action=trtToggleWishlist&id=<?php echo $id ?>' class='add-to-fav <?php echo $favoriteClass ?>'>
                   <i class='material-icons-outlined'>favorite_border</i>
                   <i class='material-icons'>favorite</i>
                 </a>
@@ -125,7 +125,7 @@ session_start();
       echo '
         <p style="margin-left: 10px">
           Your basket is empty.
-          <a href="/key_quest/index.php?action=home" style="text-decoration: underline">Jump to shop</a>
+          <a href="/KeyQuest/index.php?action=home" style="text-decoration: underline">Jump to shop</a>
         </p>
       ';
     }

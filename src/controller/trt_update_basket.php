@@ -11,7 +11,7 @@ $pdo = Model ::getPdo();
 
 // Check if the user is logged in
 if (!isset($_SESSION['user'])) {
-  header('Location: /key_quest/index.php?action=login');
+  header('Location: /KeyQuest/index.php?action=login');
   exit();
 }
 
@@ -66,5 +66,5 @@ if (!isset($_SESSION['basket'][$productId])) {
   }
 }
 
-header('Location: /key_quest/index.php?action=basket');
+header('Location: /KeyQuest/index.php?action=basket');
 exit();

@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="src/resources/icons/logo.ico">
-  <link rel="stylesheet" href="/key_quest/src/css/style.css"/>
-  <link rel="stylesheet" href="/key_quest/src/css/login.css"/>
-  <script src="/key_quest/src/js/script.js" type="text/javascript"></script>
-  <script src="/key_quest/src/js/login.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/KeyQuest/src/css/style.css"/>
+  <link rel="stylesheet" href="/KeyQuest/src/css/login.css"/>
+  <script src="/KeyQuest/src/js/script.js" type="text/javascript"></script>
+  <script src="/KeyQuest/src/js/login.js" type="text/javascript"></script>
   <title>Login</title>
 </head>
 <body>
@@ -16,7 +16,7 @@
   <div class="container">
     <div class="login-register-container">
       <!-- Login form -->
-      <form class="login-form" method="post" action="/key_quest/index.php?action=trtLogin">
+      <form class="login-form" method="post" action="/KeyQuest/index.php?action=trtLogin">
         <h2>Login</h2>
         <div class="form-group">
           <input id="login-input" name="login-input" type="text" required />
@@ -33,7 +33,7 @@
       </form>
 
       <!-- Register form -->
-      <form class="register-form" method="post" action="/key_quest/index.php?action=trtRegister">
+      <form class="register-form" method="post" action="/KeyQuest/index.php?action=trtRegister">
         <h2>Register</h2>
         <div class="form-group">
           <input id="username-register" name="username-register" type="text" required />

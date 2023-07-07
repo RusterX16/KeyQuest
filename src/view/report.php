@@ -12,7 +12,7 @@ session_start();
   <link rel="stylesheet" href="src/css/style.css"/>
   <link rel="stylesheet" href="src/css/report.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-  <script src="/key_quest/src/js/script.js" type="text/javascript"></script>
+  <script src="/KeyQuest/src/js/script.js" type="text/javascript"></script>
   <title>Report</title>
 </head>
 <body>
