@@ -10,18 +10,18 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
   <link rel="icon" href="../resources/images/logo.png" type="image/x-icon">
-  <script src="/key_quest/src/js/script.js" type="text/javascript"></script>
-  <script src="/key_quest/src/js/headband.js" type="text/javascript"></script>
+  <script src="/KeyQuest/src/js/script.js" type="text/javascript"></script>
+  <script src="/KeyQuest/src/js/headband.js" type="text/javascript"></script>
   <title>Headband</title>
 </head>
 <body>
 <header>
   <div class="headband">
-    <a href="/key_quest/index.php?action=home">
+    <a href="/KeyQuest/index.php?action=home">
       <div class="left">
         <div class="img-container">
           <img
-              src="/key_quest/src/resources/images/logo.png"
+              src="/KeyQuest/src/resources/images/logo.png"
               alt="logo"
               class="logo"
               width="50px"
@@ -39,8 +39,9 @@
       $html = '';
 
       if (!isset($_SESSION['user'])) {
+        // Display login button if user is not logged in
         $html = "
-        <a href='/key_quest/index.php?action=login'>
+        <a href='/KeyQuest/index.php?action=login'>
           <button class='login-button'>
             <i class='material-icons-outlined'>login</i>
             <span>Login</span>
@@ -48,9 +49,11 @@
         </a>
       ";
       } else {
+        // User is logged in
         $basketCount = 0;
         $favCount = 0;
 
+        // Calculate basket count
         if (isset($_SESSION['basket'])) {
           foreach ($_SESSION['basket'] as $item) {
             if (is_array($item) && isset($item['quantity'])) {
@@ -59,29 +62,27 @@
           }
         }
 
+        // Calculate wishlist count
         if (isset($_SESSION['fav'])) {
           if (is_array($_SESSION['fav'])) {
             $favCount = count($_SESSION['fav']);
-          } else {
-            $favCount = 0; // Default value if $_SESSION['fav'] is not an array
           }
-        } else {
-          $favCount = 0; // Default value if $_SESSION['fav'] is not set
         }
 
+        // Display user information and buttons for wishlist, basket, and logout
         $html = "
           <div class='welcome-message'>
             <h5 style='margin-block-start: 0; margin-block-end: 0'>Welcome back</h5>
             <h4 style='margin-block-start: 0; margin-block-end: 0'>" . $_SESSION["user"]["name"] . "</h4>
           </div>
-          <a href='/key_quest/index.php?action=wishlist'>
+          <a href='/KeyQuest/index.php?action=wishlist'>
             <button class='wishlist-button'>
               <i class='material-icons-outlined'>favorite_border</i>
               <span>Wishlist</span>
               <div class='basket-quantity-badge'>$favCount</div>
             </button>
           </a>
-          <a href='/key_quest/index.php?action=basket'>
+          <a href='/KeyQuest/index.php?action=basket'>
             <button class='basket-button'>
               <i class='material-icons-outlined'>shopping_cart</i>
               <span>Basket</span>

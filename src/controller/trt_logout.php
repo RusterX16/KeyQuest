@@ -9,5 +9,5 @@ unset($_SESSION['user']);
 session_destroy();
 
 // Redirect to the home page
-header('Location: /key_quest/index.php?action=home');
+header('Location: /KeyQuest/index.php?action=home');
 exit();

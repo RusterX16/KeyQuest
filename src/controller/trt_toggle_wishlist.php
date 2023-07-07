@@ -9,8 +9,9 @@ require_once File ::buildPath([
 
 $pdo = Model ::getPdo();
 
+// Check if the user is logged in
 if (!isset($_SESSION['user'])) {
-  header('Location: /key_quest/index.php?action=login');
+  header('Location: /KeyQuest/index.php?action=login');
   exit();
 }
 

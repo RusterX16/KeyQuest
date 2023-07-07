@@ -9,8 +9,9 @@ require_once File ::buildPath([
 
 $pdo = Model ::getPdo();
 
+// Check if the user is logged in
 if (!isset($_SESSION['user'])) {
-  header('Location: /key_quest/index.php?action=login');
+  header('Location: /KeyQuest/index.php?action=login');
   exit();
 }
 
@@ -59,11 +60,11 @@ if (!isset($_SESSION['basket'][$productId])) {
     $sql = "UPDATE items SET quantity = :quantity WHERE product_id = :id";
     $query = $pdo -> prepare($sql);
     $query -> execute([
-      'quantity' => $quantity,
+      'quantity' => $_SESSION['basket'][$productId]['quantity'],
       'id' => $productId
     ]);
   }
 }
 
-header('Location: /key_quest/index.php?action=basket');
+header('Location: /KeyQuest/index.php?action=basket');
 exit();

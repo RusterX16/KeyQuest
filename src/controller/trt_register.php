@@ -27,7 +27,7 @@ if (isset($_FILES['avatar-input']) && $_FILES['avatar-input']['error'] === UPLOA
   }
 }
 
-// First, check if the username is taken
+// Check if the username is already taken
 $sql = 'SELECT * FROM users WHERE name = :username';
 $query = $pdo -> prepare($sql);
 $query -> execute(['username' => $username]);
@@ -38,7 +38,7 @@ if ($result) {
   exit();
 }
 
-// Next, check if the email is taken
+// Check if the email is already taken
 $sql = 'SELECT * FROM users WHERE email = :email';
 $query = $pdo -> prepare($sql);
 $query -> execute(['email' => $email]);
@@ -59,7 +59,6 @@ $query -> execute([
   'password' => $hashed_password,
   'avatar_url' => $avatar_url
 ]);
-$result = $query -> fetch(PDO ::FETCH_ASSOC);
 
 if ($query -> rowCount() > 0) {
   $_SESSION['user'] = [
@@ -76,7 +75,8 @@ if ($query -> rowCount() > 0) {
     'user_id' => $_SESSION['user']['id']
   ]);
 
-  header('Location: /key_quest/index.php?action=home');
+  // Redirect to the home page
+  header('Location: /KeyQuest/index.php?action=home');
   echo "Registration successful.";
 } else {
   echo "Registration failed.";

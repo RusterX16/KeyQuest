@@ -3,6 +3,11 @@
   src: url("/src/resources/fonts/Belanosima/Belanosima-Regular.ttf");
 }
 
+@font-face {
+  font-family: "DM_Sans";
+  src: url("/src/resources/fonts/DM_Sans/DMSans-Regular.ttf");
+}
+
 :root {
   --primary-color: #ff8c00;
   --secondary-color: #696969;
@@ -10,19 +15,22 @@
   --light-color: #fff0f5;
   --gray-color: #e0ffff;
 
-  --success-color: #4fc559; /* Medium Sea Green: A less saturated, more modern color for success messages */
-  --danger-color: #e0333e; /* Light Coral: A softer, less harsh color for danger messages */
-  --warning-color: #ffc55c; /* Navajo White: A softer, less intense color for warnings */
-  --info-color: #4a83c3; /* Cadet Blue: A softer, less intense color for informational messages */
+  --success-color: #4fc559;
+  --danger-color: #e0333e;
+  --warning-color: #ffc55c;
+  --info-color: #4a83c3;
+
+  --font-family: "DM_Sans", sans-serif;
 }
 
-/* Global */
-
 html {
-  font-family: "Roboto", sans-serif;
+  /* I have no idea why this is not working at all */
+  font-family: var(--font-family);
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: var(--font-family);
   background-color: var(--light-color);
   margin: 0;
 }

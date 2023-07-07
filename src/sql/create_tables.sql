@@ -31,14 +31,14 @@ CREATE TABLE `products` (
 );
 
 CREATE TABLE `baskets` (
-  id INT AUTO_INCREMENT,
+  id      INT AUTO_INCREMENT,
   user_id INT,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 );
 
 CREATE TABLE `favorites` (
-  user_id INT,
+  user_id    INT,
   product_id INT,
   PRIMARY KEY (`user_id`, `product_id`),
   FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
@@ -47,8 +47,8 @@ CREATE TABLE `favorites` (
 
 CREATE TABLE `items` (
   product_id INT,
-  basket_id INT,
-  quantity INT,
+  basket_id  INT,
+  quantity   INT,
   PRIMARY KEY (`product_id`, `basket_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
   FOREIGN KEY (`basket_id`) REFERENCES `baskets` (`id`)
@@ -56,17 +56,17 @@ CREATE TABLE `items` (
 
 CREATE TABLE `sets` (
   product_id INT,
-  type ENUM('builtin', 'custom'),
+  type       ENUM('builtin', 'custom'),
   PRIMARY KEY (`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `keyboards` (
-  product_id INT,
-  type ENUM('full', 'tkl', '75', '65', '60', '40', 'other'),
-  layout ENUM('ansi', 'iso', 'other'),
-  rgb BOOLEAN,
-  wireless BOOLEAN,
+  product_id    INT,
+  type          ENUM('full', 'tkl', '75', '65', '60', '40', 'other'),
+  layout        ENUM('ansi', 'iso', 'other'),
+  rgb           BOOLEAN,
+  wireless      BOOLEAN,
   hot_swappable BOOLEAN,
   PRIMARY KEY (`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
@@ -74,45 +74,45 @@ CREATE TABLE `keyboards` (
 
 CREATE TABLE `keycaps` (
   product_id INT,
-  type ENUM('group_by', 'classic', 'artisanal'),
+  type       ENUM('group_by', 'classic', 'artisanal'),
   PRIMARY KEY (`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `switches` (
   product_id INT,
-  type ENUM('linear', 'tactile', 'clicky', 'optical', 'other'),
-  actuation INT,
+  type       ENUM('linear', 'tactile', 'clicky', 'optical', 'other'),
+  actuation  INT,
   bottom_out INT,
-  `force` INT,
+  `force`    INT,
   PRIMARY KEY (`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `cases` (
   product_id INT,
-  type ENUM('aluminum', 'plastic', 'wood', 'other'),
+  type       ENUM('aluminum', 'plastic', 'wood', 'other'),
   PRIMARY KEY (`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `pcbs` (
   product_id INT,
-  type ENUM('north', 'south', 'other'),
+  type       ENUM('north', 'south', 'other'),
   PRIMARY KEY (`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `tools` (
   product_id INT,
-  type ENUM('switch_puller', 'keycaps_puller', 'brush', 'lube', 'switch_opener', 'lube_station'),
+  type       ENUM('switch_puller', 'keycaps_puller', 'brush', 'lube', 'switch_opener', 'lube_station'),
   PRIMARY KEY (`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );
 
 CREATE TABLE `accessories` (
   product_id INT,
-  type ENUM('mouse_pad', 'wrist_rest', 'stabilizers', 'foam', 'cables', 'house', 'knobs', 'buffers', 'o_rings', 'stickers'),
+  type       ENUM('mouse_pad', 'wrist_rest', 'stabilizers', 'foam', 'cables', 'house', 'knobs', 'buffers', 'o_rings', 'stickers'),
   PRIMARY KEY (`product_id`),
   FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 );

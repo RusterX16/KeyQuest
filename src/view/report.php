@@ -12,14 +12,13 @@ session_start();
   <link rel="stylesheet" href="src/css/style.css"/>
   <link rel="stylesheet" href="src/css/report.css"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-  <script src="/key_quest/src/js/script.js" type="text/javascript"></script>
-  <title>Basket</title>
+  <script src="/KeyQuest/src/js/script.js" type="text/javascript"></script>
+  <title>Report</title>
 </head>
 <body>
 <?php include_once 'headband.php'; ?>
 <main>
   <?php
-
   require_once File ::buildPath([
     'model',
     'Model.php'
@@ -30,15 +29,18 @@ session_start();
   $tables = ['Products', 'Users', 'Baskets', 'Items', 'Favorites'];
 
   foreach ($tables as $table) {
+    // Prepare the SQL statement
     $sql = "SELECT * FROM $table";
     $query = $pdo -> prepare($sql);
     $query -> execute();
     $results = $query -> fetchAll(PDO::FETCH_ASSOC);
 
+    // Display the table heading
+    echo "<h2 class='table-heading'>$table :</h2>";
+
     if (!empty($results)) {
-      // Display all the data in table
-      $html = "
-        <h2 class='table-heading'>$table</h2>
+      // Display the table data
+      echo "
         <div class='table-wrapper'>
           <table class='table-style'>
             <thead>
@@ -47,33 +49,32 @@ session_start();
 
       // Retrieve the column names from the first result
       $columnNames = array_keys($results[0]);
-      for($i=0; $i < count($columnNames); $i++) {
-        $html .= "<th>$columnNames[$i]</th>";
+      foreach ($columnNames as $columnName) {
+        echo "<th>$columnName</th>";
       }
 
-      $html .= "
-              </tr>
-            </thead>
-            <tbody>
+      echo "
+            </tr>
+          </thead>
+        <tbody>
       ";
 
+      // Display each row of data
       foreach ($results as $result) {
-        $html .= '<tr>';
+        echo "<tr>";
         foreach ($result as $value) {
-          $html .= "<td class='ellipsis'>$value</td>";
+          echo "<td class='ellipsis'>$value</td>";
         }
-        $html .= '</tr>';
+        echo "</tr>";
       }
 
-      $html .= '
+      echo "
             </tbody>
           </table>
         </div>
-      ';
-
-      echo $html;
+      ";
     } else {
-      echo "<h2 class='table-heading'>$table</h2>";
+      // No data available in the table
       echo "<p style='margin-left: 20px'>No data available in this table.</p>";
     }
   }
