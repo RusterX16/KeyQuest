@@ -29,7 +29,7 @@ header .headband .left .title {
   margin-block-start: auto;
   margin-block-end: auto;
   text-shadow: -1px -1px 1px var(--light-color), 1px -1px 1px var(--light-color),
-  -1px 1px 1px var(--light-color), 1px 1px 1px var(--light-color);
+    -1px 1px 1px var(--light-color), 1px 1px 1px var(--light-color);
 }
 
 header .headband .middle .slogan {
